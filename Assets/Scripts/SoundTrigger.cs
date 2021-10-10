@@ -14,6 +14,5 @@ public class SoundTrigger : MonoBehaviour
 
     void OnTriggerEnter(Collider other) {
         source.Play();
-        Debug.Log("playing sound");
     }
 }

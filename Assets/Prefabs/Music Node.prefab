@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5184644592938351747}
   - component: {fileID: 5184644592938351756}
   - component: {fileID: 5184644592938351757}
+  - component: {fileID: 2958516294278492893}
   m_Layer: 0
   m_Name: Music Node
   m_TagString: Untagged
@@ -156,5 +157,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 0}
   zoomExponent: 1
-  zoomSpeed: 200
-  maxFov: 150
+  zoomSpeed: 500
+  maxFov: 180
+--- !u!114 &2958516294278492893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5184644592938351744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5745410529fbaa84f96f1cffb76530a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 0}

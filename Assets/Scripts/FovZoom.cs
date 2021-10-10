@@ -13,9 +13,11 @@ public class FovZoom : MonoBehaviour
     public float maxFov;
     // Prevent unnecessary FOV modification.
     private bool atMinFov = true;
+    private float colliderRadius;
 
     void Start() {
         minFov = playerCamera.fieldOfView;
+        colliderRadius = GetComponent<SphereCollider>().radius;
     }
 
     void OnTriggerEnter(Collider other) {
@@ -24,29 +26,39 @@ public class FovZoom : MonoBehaviour
 
     void OnTriggerExit(Collider other) {
         zoom = false;
+
+        playerCamera.fieldOfView = minFov;
     }
 
     void OnTriggerStay(Collider other) {
-        Debug.Log("staying in triggger");
         distance = Vector3.Magnitude(transform.position - other.transform.position);
-    }
-
-    void Update()
-    {
-        if(zoom) {
-            if(playerCamera.fieldOfView < maxFov) {
-                playerCamera.fieldOfView += (1/Mathf.Pow(distance, zoomExponent)) * zoomSpeed * Time.deltaTime;
-            }
-            atMinFov = false;
-
-        } else {
-            if(!atMinFov) {
-                if(playerCamera.fieldOfView > minFov) {
-                    playerCamera.fieldOfView -= (1/Mathf.Pow(distance, zoomExponent)) * zoomSpeed * Time.deltaTime;
-                } else {
-                    atMinFov = true;
-                }
-            }
+        if(distance > colliderRadius) {
+            return;
         }
+        
+        float fovDiff = maxFov - minFov;
+        float modPercent = 1 - Mathf.Pow((distance / colliderRadius), 2);
+        Debug.Log("mod percent; " + modPercent);
+        float modAmount = fovDiff * modPercent;
+        playerCamera.fieldOfView = minFov + modAmount;
     }
+
+    // void Update()
+    // {
+    //     if(zoom) {
+    //         if(playerCamera.fieldOfView < maxFov) {
+    //             playerCamera.fieldOfView += (1/Mathf.Pow(distance, zoomExponent)) * zoomSpeed * Time.deltaTime;
+    //         }
+    //         atMinFov = false;
+
+    //     } else {
+    //         if(!atMinFov) {
+    //             if(playerCamera.fieldOfView > minFov) {
+    //                 playerCamera.fieldOfView -= (1/Mathf.Pow(distance, zoomExponent)) * zoomSpeed * Time.deltaTime;
+    //             } else {
+    //                 atMinFov = true;
+    //             }
+    //         }
+    //     }
+    // }
 }
