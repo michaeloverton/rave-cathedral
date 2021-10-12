@@ -5,7 +5,6 @@ using UnityEngine;
 public class FovZoom : MonoBehaviour
 {
     public Camera playerCamera;
-    private bool zoom = false;
     public int zoomExponent = 1;
     public float zoomSpeed = 5f;
     private float distance;
@@ -20,13 +19,11 @@ public class FovZoom : MonoBehaviour
         colliderRadius = GetComponent<SphereCollider>().radius;
     }
 
-    void OnTriggerEnter(Collider other) {
-        zoom = true;
-    }
+    // void OnTriggerEnter(Collider other) {
+    //     zoom = true;
+    // }
 
     void OnTriggerExit(Collider other) {
-        zoom = false;
-
         playerCamera.fieldOfView = minFov;
     }
 
@@ -38,7 +35,6 @@ public class FovZoom : MonoBehaviour
         
         float fovDiff = maxFov - minFov;
         float modPercent = 1 - Mathf.Pow((distance / colliderRadius), 2);
-        Debug.Log("mod percent; " + modPercent);
         float modAmount = fovDiff * modPercent;
         playerCamera.fieldOfView = minFov + modAmount;
     }
