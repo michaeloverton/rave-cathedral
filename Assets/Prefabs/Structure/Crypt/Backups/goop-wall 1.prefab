@@ -382,7 +382,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1767309871706804353}
   m_Layer: 0
-  m_Name: goop-wall
+  m_Name: goop-wall 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -11,7 +11,6 @@ public class FovZoom : MonoBehaviour
     private float minFov;
     public float maxFov;
     // Prevent unnecessary FOV modification.
-    private bool atMinFov = true;
     private float colliderRadius;
 
     void Start() {

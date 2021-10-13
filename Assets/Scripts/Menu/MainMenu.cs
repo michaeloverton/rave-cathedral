@@ -5,19 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public GameObject instructionsMenu;
+    public GameObject skipMenu;
 
     public void Play() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void Instructions() {
+        this.gameObject.SetActive(false);
+        instructionsMenu.SetActive(true);
+    }
+
+    public void Skip() {
+        this.gameObject.SetActive(false);
+        skipMenu.SetActive(true);
     }
 }
