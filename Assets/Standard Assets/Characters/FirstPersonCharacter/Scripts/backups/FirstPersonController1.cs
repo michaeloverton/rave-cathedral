@@ -9,7 +9,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 {
     [RequireComponent(typeof (CharacterController))]
     [RequireComponent(typeof (AudioSource))]
-    public class FirstPersonController : MonoBehaviour
+    public class FirstPersonControllerBackup : MonoBehaviour
     {
         [SerializeField] private bool m_IsWalking;
         [SerializeField] private float m_WalkSpeed;
@@ -72,7 +72,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if (!m_PreviouslyGrounded && m_CharacterController.isGrounded)
             {
                 StartCoroutine(m_JumpBob.DoBobCycle());
-                // PlayLandingSound();
+                PlayLandingSound();
                 m_MoveDir.y = 0f;
                 m_Jumping = false;
             }
@@ -85,12 +85,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
         }
 
 
-        // private void PlayLandingSound()
-        // {
-        //     m_AudioSource.clip = m_LandSound;
-        //     m_AudioSource.Play();
-        //     m_NextStep = m_StepCycle + .5f;
-        // }
+        private void PlayLandingSound()
+        {
+            m_AudioSource.clip = m_LandSound;
+            m_AudioSource.Play();
+            m_NextStep = m_StepCycle + .5f;
+        }
 
 
         private void FixedUpdate()
@@ -117,7 +117,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 if (m_Jump)
                 {
                     m_MoveDir.y = m_JumpSpeed;
-                    // PlayJumpSound();
+                    PlayJumpSound();
                     m_Jump = false;
                     m_Jumping = true;
                 }
@@ -135,11 +135,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
         }
 
 
-        // private void PlayJumpSound()
-        // {
-        //     m_AudioSource.clip = m_JumpSound;
-        //     m_AudioSource.Play();
-        // }
+        private void PlayJumpSound()
+        {
+            m_AudioSource.clip = m_JumpSound;
+            m_AudioSource.Play();
+        }
 
 
         private void ProgressStepCycle(float speed)
@@ -157,25 +157,25 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             m_NextStep = m_StepCycle + m_StepInterval;
 
-            // PlayFootStepAudio();
+            PlayFootStepAudio();
         }
 
 
-        // private void PlayFootStepAudio()
-        // {
-        //     if (!m_CharacterController.isGrounded)
-        //     {
-        //         return;
-        //     }
-        //     // pick & play a random footstep sound from the array,
-        //     // excluding sound at index 0
-        //     int n = Random.Range(1, m_FootstepSounds.Length);
-        //     m_AudioSource.clip = m_FootstepSounds[n];
-        //     m_AudioSource.PlayOneShot(m_AudioSource.clip);
-        //     // move picked sound to index 0 so it's not picked next time
-        //     m_FootstepSounds[n] = m_FootstepSounds[0];
-        //     m_FootstepSounds[0] = m_AudioSource.clip;
-        // }
+        private void PlayFootStepAudio()
+        {
+            if (!m_CharacterController.isGrounded)
+            {
+                return;
+            }
+            // pick & play a random footstep sound from the array,
+            // excluding sound at index 0
+            int n = Random.Range(1, m_FootstepSounds.Length);
+            m_AudioSource.clip = m_FootstepSounds[n];
+            m_AudioSource.PlayOneShot(m_AudioSource.clip);
+            // move picked sound to index 0 so it's not picked next time
+            m_FootstepSounds[n] = m_FootstepSounds[0];
+            m_FootstepSounds[0] = m_AudioSource.clip;
+        }
 
 
         private void UpdateCameraPosition(float speed)
