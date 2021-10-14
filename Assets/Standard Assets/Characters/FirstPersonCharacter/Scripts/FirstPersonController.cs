@@ -42,6 +42,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_NextStep;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
+        private bool canMove = true;
 
         // Use this for initialization
         private void Start()
@@ -106,9 +107,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
                                m_CharacterController.height/2f, Physics.AllLayers, QueryTriggerInteraction.Ignore);
             desiredMove = Vector3.ProjectOnPlane(desiredMove, hitInfo.normal).normalized;
 
-            m_MoveDir.x = desiredMove.x*speed;
-            m_MoveDir.z = desiredMove.z*speed;
-
+            if(canMove) {
+                m_MoveDir.x = desiredMove.x*speed;
+                m_MoveDir.z = desiredMove.z*speed;
+            } else {
+                m_MoveDir.x = 0;
+                m_MoveDir.z = 0;
+            }
 
             if (m_CharacterController.isGrounded)
             {
@@ -255,6 +260,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 return;
             }
             body.AddForceAtPosition(m_CharacterController.velocity*0.1f, hit.point, ForceMode.Impulse);
+        }
+
+        public void SetCanMove(bool move) {
+            Debug.Log("setting canmove: " + move);
+            canMove = move;
         }
     }
 }

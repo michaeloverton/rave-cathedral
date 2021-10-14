@@ -21,4 +21,14 @@ public class MainMenu : MonoBehaviour
         this.gameObject.SetActive(false);
         skipMenu.SetActive(true);
     }
+
+    public void Quit() {
+        #if UNITY_EDITOR 
+        if (Application.isEditor) {
+            UnityEditor.EditorApplication.isPlaying = false;
+        }
+        #endif
+
+        Application.Quit();
+    }
 }
