@@ -42,8 +42,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_NextStep;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
+
+        // Michael modifications.
         private bool canMove = true;
         private bool paused = false;
+        private bool triggerBounce = false;
+        private bool bouncing = false;
+        private float bounceSpeed;
 
         // Use this for initialization
         private void Start()
@@ -81,10 +86,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 if (!m_PreviouslyGrounded && m_CharacterController.isGrounded)
                 {
                     StartCoroutine(m_JumpBob.DoBobCycle());
-                    // PlayLandingSound();
                     m_MoveDir.y = 0f;
                     m_Jumping = false;
+                    bouncing = false;                    
                 }
+                // What is this for?
                 if (!m_CharacterController.isGrounded && !m_Jumping && m_PreviouslyGrounded)
                 {
                     m_MoveDir.y = 0f;
@@ -124,9 +130,16 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     if (m_Jump)
                     {
                         m_MoveDir.y = m_JumpSpeed;
-                        // PlayJumpSound();
                         m_Jump = false;
                         m_Jumping = true;
+                    }
+
+                    if(triggerBounce) {
+                        m_MoveDir.y = bounceSpeed;
+                        m_Jump = false;
+                        m_Jumping = true;
+                        triggerBounce = false;
+                        bouncing = true;
                     }
                 }
                 else
@@ -233,10 +246,17 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void OnControllerColliderHit(ControllerColliderHit hit)
         {
+            if(hit.collider.gameObject.GetComponent<BouncePad>()) {
+                bounceSpeed = hit.collider.gameObject.GetComponent<BouncePad>().bouncePower;
+                triggerBounce = true;
+            }
+
             Rigidbody body = hit.collider.attachedRigidbody;
             //dont move the rigidbody if the character is on top of it
             if (m_CollisionFlags == CollisionFlags.Below)
             {
+                // if we have a collision below that isn't a bounce pad, set trigger bounce to false.
+                triggerBounce = false;
                 return;
             }
 

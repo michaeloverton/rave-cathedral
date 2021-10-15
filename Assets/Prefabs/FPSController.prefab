@@ -302,6 +302,7 @@ MonoBehaviour:
   - {fileID: 0}
   m_JumpSound: {fileID: 0}
   m_LandSound: {fileID: 0}
+  bounceSpeed: 55
 --- !u!54 &5199696117730846187
 Rigidbody:
   m_ObjectHideFlags: 0
