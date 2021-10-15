@@ -52,29 +52,41 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 camera.localRotation = m_CameraTargetRot;
             }
 
-            UpdateCursorLock();
+            // LookRotation will never be called when paused.
+            // UpdateCursorLock(false);
         }
 
         public void SetCursorLock(bool value)
         {
             lockCursor = value;
             if(!lockCursor)
-            {//we force unlock the cursor if the user disable the cursor locking helper
+            {
+                //we force unlock the cursor if the user disable the cursor locking helper
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
             }
         }
 
-        public void UpdateCursorLock()
+        public void UpdateCursorLock(bool paused)
         {
             //if the user set "lockCursor" we check & properly lock the cursos
             if (lockCursor)
-                InternalLockUpdate();
+                InternalLockUpdate(paused);
         }
 
-        private void InternalLockUpdate()
+        private void InternalLockUpdate(bool paused)
         {
-            if(Input.GetKeyUp(KeyCode.Escape))
+            // if(paused) {
+            //     m_cursorIsLocked = false;
+            // }
+
+            if(!paused && Input.GetKeyUp(KeyCode.Escape))
+            {
+                m_cursorIsLocked = false;
+            }
+
+            // ORIGINAL CODE:
+            if(paused && Input.GetKeyUp(KeyCode.Escape))
             {
                 m_cursorIsLocked = false;
             }

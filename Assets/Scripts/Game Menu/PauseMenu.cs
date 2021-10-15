@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    public GameObject contents;
+    public GameObject pauseContents;
+    public GameObject loading;
     private bool isPaused = false;
-
-    // This is a hack. The pause menu can freeze the player.
+    private bool isLoading = false;
+    // Our access of player here is a hack but whatever.
     private FirstPersonController player;
 
     void Start() {
@@ -21,24 +23,35 @@ public class PauseMenu : MonoBehaviour
     }
 
     void Update() {
-        if(Input.GetKeyUp(KeyCode.Escape)){
-            isPaused = !isPaused;
+        if(!isLoading) {
+            if(Input.GetKeyUp(KeyCode.Escape)){
+                isPaused = !isPaused;
 
-            if(isPaused) {
-                contents.SetActive(true);
-            } else {
-                contents.SetActive(false);
+                if(isPaused) {
+                    pauseContents.SetActive(true);
+                    player.SetPaused(true);
+                } else {
+                    pauseContents.SetActive(false);
+                    player.SetPaused(false);
+                }
             }
         }
     }
 
     public void Continue() {
         isPaused = false;
-        contents.SetActive(false);
+        pauseContents.SetActive(false);
+
+        player.SetPaused(false);
     }
 
     public void TitleScreen() {
-        return;
+        pauseContents.SetActive(false);
+        loading.SetActive(true);
+        isLoading = true;
+
+        // TODO: Make smooth fade out. This is very harsh.
+        StartCoroutine(AsyncLoad());
     }
 
     public void Quit() {
@@ -49,5 +62,20 @@ public class PauseMenu : MonoBehaviour
         #endif
 
         Application.Quit();
+    }
+
+    IEnumerator AsyncLoad()
+    {
+        yield return null;
+        
+        // The Application loads the Scene in the background as the current Scene runs.
+        // This is particularly good for creating loading screens.
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Menu");
+
+        // Wait until the asynchronous scene fully loads
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
     }
 }
