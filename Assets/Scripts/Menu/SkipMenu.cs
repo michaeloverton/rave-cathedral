@@ -7,10 +7,16 @@ public class SkipMenu : MonoBehaviour
 {
     public GameObject mainMenu;
     public TrackSkipper trackSkipper;
+    public GameObject buttons;
+    public GameObject loadingText;
+    public SceneChanger sceneChanger;
 
     public void SetTrackSkip(int skip) {
         trackSkipper.SetTrackSkip(skip);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        buttons.SetActive(false);
+        loadingText.SetActive(true);
+
+        StartCoroutine(sceneChanger.AsyncLoad());
     }
 
     public void Back() {

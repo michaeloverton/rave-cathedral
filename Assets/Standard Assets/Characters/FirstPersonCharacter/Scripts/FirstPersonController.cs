@@ -263,7 +263,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
         }
 
         public void SetCanMove(bool move) {
-            Debug.Log("setting canmove: " + move);
             canMove = move;
         }
     }

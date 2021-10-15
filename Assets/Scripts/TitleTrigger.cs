@@ -10,6 +10,7 @@ public class TitleTrigger : MonoBehaviour
     public string trackNumber;
     public string trackTitle;
     private bool displayed = false;
+    private bool isFirstTrack = false;
 
     void OnTriggerEnter(Collider other) {
         if(!displayed) {
@@ -22,6 +23,11 @@ public class TitleTrigger : MonoBehaviour
 
     IEnumerator displayTitle() 
     {
+        // Wait an additional time for first track to let screen fade in.
+        if(isFirstTrack) {
+            yield return new WaitForSeconds(2);
+        }
+
         yield return new WaitForSeconds(1);
         trackNumberText.enabled = true;
 
@@ -31,5 +37,9 @@ public class TitleTrigger : MonoBehaviour
         yield return new WaitForSeconds(4);
         trackNumberText.enabled = false;
         trackTitleText.enabled = false;
+    }
+
+    public void MakeFirstTrack() {
+        isFirstTrack = true;
     }
 }

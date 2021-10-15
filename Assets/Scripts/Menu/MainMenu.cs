@@ -7,9 +7,18 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject instructionsMenu;
     public GameObject skipMenu;
+    public GameObject buttons;
+    public TrackSkipper trackSkipper;
+    public GameObject loadingText;
+    public SceneChanger sceneChanger;
 
     public void Play() {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        // "Skip" to the first track.
+        trackSkipper.SetTrackSkip(1);
+        buttons.SetActive(false);
+        loadingText.SetActive(true);
+
+        StartCoroutine(sceneChanger.AsyncLoad());
     }
 
     public void Instructions() {
