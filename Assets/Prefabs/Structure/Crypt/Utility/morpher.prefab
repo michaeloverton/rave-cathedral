@@ -44,8 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 532ea39f46b8403478e38a4c9adb9053, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxModulationScale: 3
+  modulationSpeed: 0.1
+  modulationTime: 3
   wallPiece: {fileID: 0}
-  maxScaleIncreaseAmount: 2.5
+  maxScaleIncreaseAmount: 3
   maxZChangeAmount: 5
 --- !u!135 &4108286320222196778
 SphereCollider:
