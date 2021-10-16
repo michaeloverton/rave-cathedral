@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-2094233694800264856
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 4
 --- !u!21 &2100000
 Material:
   serializedVersion: 6
@@ -20,10 +7,10 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Emmissive Dissolve
-  m_Shader: {fileID: -6465566751694194690, guid: 39518fc55d6ee3d44a078c30e646690e, type: 3}
+  m_Name: PadGlow2
+  m_Shader: {fileID: -6465566751694194690, guid: 3173eb8f7f50c1b40b0d9be6a50fa07c, type: 3}
   m_ShaderKeywords: 
-  m_LightmapFlags: 2
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -89,11 +76,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_1cc2415cc68042499bbbddf6e4e6f3a9: 35.3
-    - Vector1_27b7046f37c54dc4ad5b615ef9d43f1d: 0.02
-    - Vector1_4fda61bf0c8d43ad998ab034608fe5cd: 0.5
-    - Vector1_7c287c91e2644ba292bc9f55d824d5b6: 3
-    - Vector1_b598aec77bee4d5b980a6c4e7c72c46f: 0
+    - Vector1_69c3e44613b941dbb5de2c91caface19: -0.45
+    - Vector1_7f295990ff854769a9d48d06bd344980: 10
+    - Vector1_981ce228875e426f8a4ec141d1726ffe: 2
+    - Vector1_c42ddbc6e6ab47de8c34d8ad1eb408ab: 26.28
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -121,14 +107,23 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_16aed3e5e6e745e895c3b511862334cc: {r: 0.1254902, g: 0, b: 1, a: 1}
-    - Color_3f75a5dc10c543a8a42aec70957e7f6a: {r: 1, g: 0, b: 0.6784314, a: 0}
-    - Color_8741ddfc1f1b4eb480f7a8a651554d6b: {r: 1, g: 1, b: 1, a: 0}
-    - Vector2_188d94ec4d3e4b66951ce5053c08a96d: {r: 0, g: 0.05, b: 0, a: 0}
-    - Vector2_2160e0b58264494e9b55625e7eb084cf: {r: 60, g: 0, b: 0, a: 0}
-    - Vector2_3ef32486a0024ce0adab728d70d9cb71: {r: 0, g: 20, b: 0, a: 0}
+    - Color_821e99b018bd4dc1a6688e82e071dcd1: {r: 0, g: 1, b: 0.8986738, a: 0}
+    - Vector2_feb18ac8c93f4868b3ea1793db6d650f: {r: -0.6, g: 0.35, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
+--- !u!114 &3171911757582438245
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 4
