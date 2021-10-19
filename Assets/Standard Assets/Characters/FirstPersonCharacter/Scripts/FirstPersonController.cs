@@ -47,7 +47,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool canMove = true;
         private bool paused = false;
         private bool triggerBounce = false;
-        private bool bouncing = false;
         private float bounceSpeed;
 
         // Use this for initialization
@@ -88,7 +87,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     StartCoroutine(m_JumpBob.DoBobCycle());
                     m_MoveDir.y = 0f;
                     m_Jumping = false;
-                    bouncing = false;                    
                 }
                 // What is this for?
                 if (!m_CharacterController.isGrounded && !m_Jumping && m_PreviouslyGrounded)
@@ -139,7 +137,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
                         m_Jump = false;
                         m_Jumping = true;
                         triggerBounce = false;
-                        bouncing = true;
                     }
                 }
                 else
@@ -253,7 +250,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             Rigidbody body = hit.collider.attachedRigidbody;
             //dont move the rigidbody if the character is on top of it
-            if (m_CollisionFlags == CollisionFlags.Below)
+            if (m_CollisionFlags == CollisionFlags.Below && !triggerBounce)
             {
                 // if we have a collision below that isn't a bounce pad, set trigger bounce to false.
                 triggerBounce = false;
