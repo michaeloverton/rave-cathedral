@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7237093531085324121
+--- !u!114 &-5169527392605734472
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Digi-Emit
-  m_Shader: {fileID: -6465566751694194690, guid: a521ab5096be37f4b96f9b2ad86dd5aa, type: 3}
+  m_Name: Static Clip
+  m_Shader: {fileID: -6465566751694194690, guid: 9c8ae3744aaa65748beacfc791593ac5, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -32,10 +32,6 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - Texture2D_9f99f5f43c3e47f1951c21b14a5996b8:
-        m_Texture: {fileID: 2800000, guid: ca8ea41f83c6ae5418b06ad75c63fd5e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -93,13 +89,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_100a2c3217eb4beb860d16ba53f012bf: 0.43
-    - Vector1_38323d84a02345db962ae6d0e026eb30: 0.14
-    - Vector1_8b7a862bc14246e0b6d183e6b9326916: 0.09
-    - Vector1_b0917447b5eb48a9862b82c007cf0b4d: 5
-    - Vector1_b93336114cbc4eaebd4adfdb92387b4b: 0.25
-    - Vector1_f4936fac536444089371e4d438e925d0: 0.5
-    - Vector1_ff391d570c474d2ea84fa50a258db42b: 47.26
+    - Vector1_3fb97908ca5f406da72581588d728c15: 2
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -127,8 +117,9 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Vector2_86be2b6db38d412fb8cdad6474fb408e: {r: 0, g: 0.02, b: 0, a: 0}
-    - Vector2_dcf1cabed40441aab2e6fef04d702577: {r: 5, g: 5, b: 0, a: 0}
+    - Vector2_2511a9cc86bc4dcd8c56cefb5f8d9dda: {r: 0, g: 10, b: 0, a: 0}
+    - Vector2_33da6b561d614410a61445f3d3f03306: {r: 166.5, g: 442.6, b: 0, a: 0}
+    - Vector2_ff2c539bc35d43df93b7c7d46afd2f99: {r: 0, g: 7, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

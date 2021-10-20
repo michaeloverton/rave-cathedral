@@ -19,7 +19,6 @@ public class TunnelLightActivator : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        Debug.Log("entered light");
         activatedLight.enabled = true;
         activate = true;
     }
@@ -34,8 +33,6 @@ public class TunnelLightActivator : MonoBehaviour
         if(activate) {
             if(activatedLight.intensity < maxIntensity) {
                 activatedLight.intensity += speed * Time.deltaTime;
-            } else {
-                Debug.Log("light is at max intensity");
             }
         } else {
             if(activatedLight.intensity > 0) {
@@ -43,7 +40,6 @@ public class TunnelLightActivator : MonoBehaviour
             } else if(activatedLight.enabled) {
                 // Turn off the light once it's below 0.
                 activatedLight.enabled = false;
-                Debug.Log("disabling light.");
             }
         }
     }

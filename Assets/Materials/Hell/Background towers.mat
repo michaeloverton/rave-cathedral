@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Digi-Emit
+  m_Name: Background towers
   m_Shader: {fileID: -6465566751694194690, guid: a521ab5096be37f4b96f9b2ad86dd5aa, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -128,7 +128,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - Vector2_86be2b6db38d412fb8cdad6474fb408e: {r: 0, g: 0.02, b: 0, a: 0}
-    - Vector2_dcf1cabed40441aab2e6fef04d702577: {r: 5, g: 5, b: 0, a: 0}
+    - Vector2_dcf1cabed40441aab2e6fef04d702577: {r: 60, g: 60, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
