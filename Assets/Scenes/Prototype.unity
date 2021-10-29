@@ -10019,7 +10019,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5880281631643441268, guid: 26d00dd3de7aaad479553bb0a00ad320, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26d00dd3de7aaad479553bb0a00ad320, type: 3}
@@ -10757,9 +10757,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 618660146}
     m_Modifications:
+    - target: {fileID: 2653267697029413472, guid: 849cc35c06f54ea4298184ff940720ad, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5145805048934930473, guid: 849cc35c06f54ea4298184ff940720ad, type: 3}
       propertyPath: m_Name
       value: bouncepad2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5145805048934930473, guid: 849cc35c06f54ea4298184ff940720ad, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 5486020693652783763, guid: 849cc35c06f54ea4298184ff940720ad, type: 3}
       propertyPath: m_RootOrder
@@ -10804,6 +10812,14 @@ PrefabInstance:
     - target: {fileID: 5486020693652783763, guid: 849cc35c06f54ea4298184ff940720ad, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5505127183826692430, guid: 849cc35c06f54ea4298184ff940720ad, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8057532200842506117, guid: 849cc35c06f54ea4298184ff940720ad, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 849cc35c06f54ea4298184ff940720ad, type: 3}
@@ -15621,9 +15637,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 618660146}
     m_Modifications:
+    - target: {fileID: 2653267697029413472, guid: 849cc35c06f54ea4298184ff940720ad, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5145805048934930473, guid: 849cc35c06f54ea4298184ff940720ad, type: 3}
       propertyPath: m_Name
       value: bouncepad2 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5145805048934930473, guid: 849cc35c06f54ea4298184ff940720ad, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 5486020693652783763, guid: 849cc35c06f54ea4298184ff940720ad, type: 3}
       propertyPath: m_RootOrder
@@ -15668,6 +15692,14 @@ PrefabInstance:
     - target: {fileID: 5486020693652783763, guid: 849cc35c06f54ea4298184ff940720ad, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5505127183826692430, guid: 849cc35c06f54ea4298184ff940720ad, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8057532200842506117, guid: 849cc35c06f54ea4298184ff940720ad, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 849cc35c06f54ea4298184ff940720ad, type: 3}
@@ -38166,9 +38198,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 618660146}
     m_Modifications:
+    - target: {fileID: 2653267697029413472, guid: 849cc35c06f54ea4298184ff940720ad, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5145805048934930473, guid: 849cc35c06f54ea4298184ff940720ad, type: 3}
       propertyPath: m_Name
       value: bouncepad2 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5145805048934930473, guid: 849cc35c06f54ea4298184ff940720ad, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 5486020693652783763, guid: 849cc35c06f54ea4298184ff940720ad, type: 3}
       propertyPath: m_RootOrder
@@ -38213,6 +38253,14 @@ PrefabInstance:
     - target: {fileID: 5486020693652783763, guid: 849cc35c06f54ea4298184ff940720ad, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5505127183826692430, guid: 849cc35c06f54ea4298184ff940720ad, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8057532200842506117, guid: 849cc35c06f54ea4298184ff940720ad, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 849cc35c06f54ea4298184ff940720ad, type: 3}
@@ -40603,7 +40651,7 @@ MonoBehaviour:
   player: {fileID: 506857788}
   skipController: {fileID: 97387005}
   trackOneChangeStartY: -5
-  trackOneChangeEndY: -40
+  trackOneChangeEndY: -50
   trackOne: {fileID: 1480280967}
   trackOneFilter: {fileID: 1480280968}
   trackTwoFadeInStartY: -10
@@ -62187,9 +62235,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 618660146}
     m_Modifications:
+    - target: {fileID: 2653267697029413472, guid: 849cc35c06f54ea4298184ff940720ad, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5145805048934930473, guid: 849cc35c06f54ea4298184ff940720ad, type: 3}
       propertyPath: m_Name
       value: bouncepad2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5145805048934930473, guid: 849cc35c06f54ea4298184ff940720ad, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 5486020693652783763, guid: 849cc35c06f54ea4298184ff940720ad, type: 3}
       propertyPath: m_RootOrder
@@ -62234,6 +62290,14 @@ PrefabInstance:
     - target: {fileID: 5486020693652783763, guid: 849cc35c06f54ea4298184ff940720ad, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5505127183826692430, guid: 849cc35c06f54ea4298184ff940720ad, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8057532200842506117, guid: 849cc35c06f54ea4298184ff940720ad, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 849cc35c06f54ea4298184ff940720ad, type: 3}
