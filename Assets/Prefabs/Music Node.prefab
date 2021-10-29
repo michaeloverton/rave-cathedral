@@ -43,7 +43,7 @@ AudioSource:
   m_GameObject: {fileID: 5184644592938351744}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 7055414241397343432, guid: 3b4951a822bfdbf498d84407827a0f40, type: 2}
   m_audioClip: {fileID: 8300000, guid: 465466d3546a80a4aad11a9a46eb7e44, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -158,7 +158,7 @@ MonoBehaviour:
   playerCamera: {fileID: 0}
   zoomExponent: 1
   zoomSpeed: 500
-  maxFov: 180
+  maxFov: 160
 --- !u!114 &2958516294278492893
 MonoBehaviour:
   m_ObjectHideFlags: 0

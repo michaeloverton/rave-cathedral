@@ -40,7 +40,7 @@ public class SkipController : MonoBehaviour
             TrackSkipper skipper = GameObject.Find("TrackSkipper").GetComponent<TrackSkipper>();
             track = skipper.GetTrackSkip();
         } else {
-            track = 2;
+            track = 1;
         }
         
         if(track == 1) {
