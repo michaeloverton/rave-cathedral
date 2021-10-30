@@ -25,7 +25,7 @@ public class TitleTrigger : MonoBehaviour
     {
         // Wait an additional time for first track to let screen fade in.
         if(isFirstTrack) {
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(3);
         }
 
         yield return new WaitForSeconds(1);
