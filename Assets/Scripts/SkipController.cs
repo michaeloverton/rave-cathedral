@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class SkipController : MonoBehaviour
 {
@@ -24,6 +25,40 @@ public class SkipController : MonoBehaviour
     private float trackThreeMaxVolume;
     private float startTrackMaxVolume;
 
+/*
+    void Awake() {
+        int track;
+        if(!developmentMode) {
+            TrackSkipper skipper = GameObject.Find("TrackSkipper").GetComponent<TrackSkipper>();
+            track = skipper.GetTrackSkip();
+        } else {
+            track = developmentModeStartTrack;
+        }
+        
+        if(track == 1) {
+            // if(!developmentMode) Instantiate(player, trackOneStart.position, Quaternion.AngleAxis(90, Vector3.up));
+            player.transform.position = trackOneStart.position;
+            startTrack = trackOneMusic;
+            startTrackMaxVolume = trackOneMaxVolume;
+            
+            trackOneTitleTrigger.MakeFirstTrack();
+        } else if(track == 2) {
+            // if(!developmentMode) Instantiate(player, trackTwoStart.position, Quaternion.AngleAxis(90, Vector3.up));
+            player.transform.position = trackTwoStart.position;
+            startTrack = trackTwoMusic;
+            startTrackMaxVolume = trackTwoMaxVolume;
+            
+            trackTwoTitleTrigger.MakeFirstTrack();
+        } else {
+            if(!developmentMode) Instantiate(player, trackThreeStart.position, Quaternion.AngleAxis(90, Vector3.up));
+            startTrack = trackThreeMusic;
+            startTrackMaxVolume = trackThreeMaxVolume;
+            
+            trackThreeTitleTrigger.MakeFirstTrack();
+        }
+    }
+    */
+
     void Start()
     {
         // Remember the "max" volumes of each music when it's on.
@@ -45,19 +80,19 @@ public class SkipController : MonoBehaviour
         }
         
         if(track == 1) {
-            if(!developmentMode) Instantiate(player, trackOneStart.position, Quaternion.AngleAxis(90, Vector3.up));
+            player.transform.position = trackOneStart.position;
             startTrack = trackOneMusic;
             startTrackMaxVolume = trackOneMaxVolume;
             
             trackOneTitleTrigger.MakeFirstTrack();
         } else if(track == 2) {
-            if(!developmentMode) Instantiate(player, trackTwoStart.position, Quaternion.AngleAxis(90, Vector3.up));
+            player.transform.position = trackTwoStart.position;
             startTrack = trackTwoMusic;
             startTrackMaxVolume = trackTwoMaxVolume;
             
             trackTwoTitleTrigger.MakeFirstTrack();
         } else {
-            if(!developmentMode) Instantiate(player, trackThreeStart.position, Quaternion.AngleAxis(90, Vector3.up));
+            player.transform.position = trackThreeStart.position;
             startTrack = trackThreeMusic;
             startTrackMaxVolume = trackThreeMaxVolume;
             

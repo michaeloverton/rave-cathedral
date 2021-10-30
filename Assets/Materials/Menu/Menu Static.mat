@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Varying Dissolve 1
-  m_Shader: {fileID: -6465566751694194690, guid: c84860a7ec3f1f448bf17d5a08858e3d, type: 3}
+  m_Name: Menu Static
+  m_Shader: {fileID: -6465566751694194690, guid: dcef65387775ee042a7ccf7353986282, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -76,10 +76,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_1cc2415cc68042499bbbddf6e4e6f3a9: 35.3
-    - Vector1_27b7046f37c54dc4ad5b615ef9d43f1d: 0.02
-    - Vector1_4fda61bf0c8d43ad998ab034608fe5cd: 0.5
-    - Vector1_b598aec77bee4d5b980a6c4e7c72c46f: 0
+    - Vector1_3fb97908ca5f406da72581588d728c15: 2
+    - Vector1_90e6089003ea41cf9039a2ddad8e0345: -0.12
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -107,16 +105,15 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_3f75a5dc10c543a8a42aec70957e7f6a: {r: 1, g: 0, b: 0.67774296, a: 0}
-    - Color_8741ddfc1f1b4eb480f7a8a651554d6b: {r: 0, g: 0.16926694, b: 1, a: 0}
-    - Vector2_188d94ec4d3e4b66951ce5053c08a96d: {r: 0, g: 0.05, b: 0, a: 0}
-    - Vector2_2160e0b58264494e9b55625e7eb084cf: {r: 112.99, g: 0, b: 0, a: 0}
+    - Vector2_2511a9cc86bc4dcd8c56cefb5f8d9dda: {r: 0, g: 149.31, b: 0, a: 0}
+    - Vector2_33da6b561d614410a61445f3d3f03306: {r: 166.5, g: 442.6, b: 0, a: 0}
+    - Vector2_ff2c539bc35d43df93b7c7d46afd2f99: {r: 0, g: 89.5, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &7177911597937364250
+--- !u!114 &8077342176543076201
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

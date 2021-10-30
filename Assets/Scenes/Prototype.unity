@@ -2714,8 +2714,8 @@ MonoBehaviour:
   trackThreeStart: {fileID: 826747462}
   trackThreeMusic: {fileID: 1840500242}
   trackThreeTitleTrigger: {fileID: 1088255663}
-  player: {fileID: 5199696117725447819, guid: 6ed1ef1d0203eda4cadc5d027613f303, type: 3}
-  developmentMode: 1
+  player: {fileID: 506857788}
+  developmentMode: 0
   developmentModeStartTrack: 3
   fadeInSpeed: 0.5
 --- !u!4 &97387006
@@ -24734,7 +24734,7 @@ MonoBehaviour:
   - {fileID: 1569809136}
   - {fileID: 410953305}
   - {fileID: 1420405811}
-  switchTime: 0
+  switchTime: 2
 --- !u!1 &990733885
 GameObject:
   m_ObjectHideFlags: 0

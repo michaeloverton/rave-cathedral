@@ -29,7 +29,6 @@ public class LightToggler : MonoBehaviour
     void Update()
     {
         if(timer >= switchTime) {
-            Debug.Log("switching");
             // Turn off the currently on lights.
             towers[onLights[0]].TurnOff();
             towers[onLights[1]].TurnOff();
@@ -37,7 +36,6 @@ public class LightToggler : MonoBehaviour
 
             // Turn on a random set of next lights.
             int nextGroup = Random.Range(0, 7);
-            Debug.Log("next group: " + nextGroup);
             int indexZero = 3 * nextGroup;
             int indexOne = (3*nextGroup) + 1;
             int indexTwo = (3*nextGroup) + 2;
