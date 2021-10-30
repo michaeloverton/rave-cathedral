@@ -15,6 +15,7 @@ public class SkipController : MonoBehaviour
     public TitleTrigger trackThreeTitleTrigger;
     public GameObject player;
     public bool developmentMode; // Ignores track skipping.
+    public int developmentModeStartTrack = 1;
     private AudioSource startTrack;
     public float fadeInSpeed = 0.25f;
     private bool fadeInComplete = false;
@@ -40,7 +41,7 @@ public class SkipController : MonoBehaviour
             TrackSkipper skipper = GameObject.Find("TrackSkipper").GetComponent<TrackSkipper>();
             track = skipper.GetTrackSkip();
         } else {
-            track = 1;
+            track = developmentModeStartTrack;
         }
         
         if(track == 1) {

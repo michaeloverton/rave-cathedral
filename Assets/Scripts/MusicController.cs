@@ -44,9 +44,6 @@ public class MusicController : MonoBehaviour
 
         trackThreeStartVolume = skipController.TrackThreeMaxVolume();
         trackThreeStartFilter = trackThreeFilter.cutoffFrequency;
-
-        Debug.Log("trak one start: " + trackOneStartVolume);
-        Debug.Log("trak two start: " + trackTwoStartVolume);
     }
 
     // Update is called once per frame
