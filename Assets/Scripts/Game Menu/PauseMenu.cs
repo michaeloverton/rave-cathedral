@@ -3,15 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseContents;
     public GameObject loading;
+    public Slider sensitivitySlider;
     private bool isPaused = false;
     private bool isLoading = false;
     // Our access of player here is a hack but whatever.
     private FirstPersonController player;
+    private float baseSensitivity;
+    public GameObject mainPage;
+    public GameObject settingsPage;
 
     void Start() {
         GameObject playerObject = GameObject.Find("FPSController");
@@ -20,6 +25,8 @@ public class PauseMenu : MonoBehaviour
         }
 
         player = playerObject.GetComponent<FirstPersonController>();
+        baseSensitivity = player.m_MouseLook.XSensitivity;
+        sensitivitySlider.onValueChanged.AddListener (delegate {UpdateMouseSensitivity();});
     }
 
     void Update() {
@@ -54,6 +61,16 @@ public class PauseMenu : MonoBehaviour
         StartCoroutine(AsyncLoad());
     }
 
+    public void Settings() {
+        mainPage.SetActive(false);
+        settingsPage.SetActive(true);
+    }
+
+    public void Back() {
+        mainPage.SetActive(true);
+        settingsPage.SetActive(false);
+    }
+
     public void Quit() {
         #if UNITY_EDITOR 
         if (Application.isEditor) {
@@ -77,5 +94,10 @@ public class PauseMenu : MonoBehaviour
         {
             yield return null;
         }
+    }
+
+    private void UpdateMouseSensitivity() {
+        player.m_MouseLook.XSensitivity = sensitivitySlider.value;
+        player.m_MouseLook.YSensitivity = sensitivitySlider.value;
     }
 }
