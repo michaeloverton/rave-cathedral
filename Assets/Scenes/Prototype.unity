@@ -7399,6 +7399,7 @@ Transform:
   - {fileID: 2103428335}
   - {fileID: 557614259}
   - {fileID: 838441018}
+  - {fileID: 495630117}
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12346,7 +12347,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7937890831559275098, guid: 85406fc984a285a4abf2451b3fe078ba, type: 3}
       propertyPath: bouncePower
-      value: 60
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85406fc984a285a4abf2451b3fe078ba, type: 3}
@@ -14238,6 +14239,64 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3974649125814600958, guid: 545b8b1294914ce47b5b37ddb7c759de, type: 3}
+--- !u!1 &495630116
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 495630117}
+  - component: {fileID: 495630118}
+  - component: {fileID: 495630119}
+  m_Layer: 0
+  m_Name: Music Transition Cancel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &495630117
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495630116}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 42.8, y: -59.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 245902365}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &495630118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495630116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41b24cfbb5c85e642bb75c0b753b189e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicController: {fileID: 1695773875}
+--- !u!65 &495630119
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495630116}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 166.41, y: 92.22, z: 103}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &500925260 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2800679285519248432, guid: 6e0a868c383c72e40b9fe5a42110fd1a, type: 3}
@@ -17720,7 +17779,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &655674132
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21414,7 +21473,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7937890831559275098, guid: 85406fc984a285a4abf2451b3fe078ba, type: 3}
       propertyPath: bouncePower
-      value: 60
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85406fc984a285a4abf2451b3fe078ba, type: 3}
@@ -32102,7 +32161,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7937890831559275098, guid: 85406fc984a285a4abf2451b3fe078ba, type: 3}
       propertyPath: bouncePower
-      value: 70
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85406fc984a285a4abf2451b3fe078ba, type: 3}
@@ -33478,7 +33537,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7937890831559275098, guid: 85406fc984a285a4abf2451b3fe078ba, type: 3}
       propertyPath: bouncePower
-      value: 60
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85406fc984a285a4abf2451b3fe078ba, type: 3}
@@ -43878,7 +43937,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7937890831559275098, guid: 85406fc984a285a4abf2451b3fe078ba, type: 3}
       propertyPath: bouncePower
-      value: 80
+      value: 70
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85406fc984a285a4abf2451b3fe078ba, type: 3}
@@ -46702,7 +46761,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7937890831559275098, guid: 85406fc984a285a4abf2451b3fe078ba, type: 3}
       propertyPath: bouncePower
-      value: 80
+      value: 70
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85406fc984a285a4abf2451b3fe078ba, type: 3}
@@ -46767,7 +46826,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7937890831559275098, guid: 85406fc984a285a4abf2451b3fe078ba, type: 3}
       propertyPath: bouncePower
-      value: 60
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85406fc984a285a4abf2451b3fe078ba, type: 3}
@@ -53238,7 +53297,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7937890831559275098, guid: 85406fc984a285a4abf2451b3fe078ba, type: 3}
       propertyPath: bouncePower
-      value: 70
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85406fc984a285a4abf2451b3fe078ba, type: 3}
@@ -57627,7 +57686,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7937890831559275098, guid: 85406fc984a285a4abf2451b3fe078ba, type: 3}
       propertyPath: bouncePower
-      value: 70
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85406fc984a285a4abf2451b3fe078ba, type: 3}
@@ -61407,7 +61466,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7937890831559275098, guid: 85406fc984a285a4abf2451b3fe078ba, type: 3}
       propertyPath: bouncePower
-      value: 80
+      value: 70
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85406fc984a285a4abf2451b3fe078ba, type: 3}
@@ -61567,7 +61626,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7937890831559275098, guid: 85406fc984a285a4abf2451b3fe078ba, type: 3}
       propertyPath: bouncePower
-      value: 70
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85406fc984a285a4abf2451b3fe078ba, type: 3}
@@ -64833,7 +64892,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7937890831559275098, guid: 85406fc984a285a4abf2451b3fe078ba, type: 3}
       propertyPath: bouncePower
-      value: 80
+      value: 70
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85406fc984a285a4abf2451b3fe078ba, type: 3}
@@ -66673,7 +66732,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a9a12ec179283f4a87b38e5068ce406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bouncePower: 105
+  bouncePower: 95
 --- !u!64 &4917877203175091817
 MeshCollider:
   m_ObjectHideFlags: 0
