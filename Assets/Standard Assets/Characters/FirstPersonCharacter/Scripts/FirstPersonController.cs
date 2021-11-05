@@ -68,6 +68,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
         // Update is called once per frame
         private void Update()
         {
+            // Enter screenshot mode.
+            if(Input.GetKeyUp(KeyCode.F5)) {
+                if(paused) SetPaused(false);
+                else SetPaused(true);
+            }
+
             if(!paused) {
                 LockCursor();
             } else {
