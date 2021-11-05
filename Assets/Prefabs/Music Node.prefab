@@ -53,7 +53,7 @@ AudioSource:
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 0
   MinDistance: 6.304043
   MaxDistance: 21.82853
   Pan2D: 0
@@ -158,7 +158,7 @@ MonoBehaviour:
   playerCamera: {fileID: 0}
   zoomExponent: 1
   zoomSpeed: 500
-  maxFov: 160
+  maxFov: 120
 --- !u!114 &2958516294278492893
 MonoBehaviour:
   m_ObjectHideFlags: 0
