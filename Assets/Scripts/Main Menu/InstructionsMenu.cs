@@ -56,5 +56,9 @@ public class InstructionsMenu : MonoBehaviour
             prevButton.SetActive(false);
             nextButton.SetActive(true);
         }
+        if(currentInstruction != 0 && currentInstruction != instructions.Count -1) {
+            prevButton.SetActive(true);
+            nextButton.SetActive(true);
+        }
     }
 }
