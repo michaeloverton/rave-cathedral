@@ -18,7 +18,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private float m_JumpSpeed;
         [SerializeField] private float m_StickToGroundForce;
         [SerializeField] private float m_GravityMultiplier;
-        [SerializeField] private MouseLook m_MouseLook;
+        [SerializeField] public MouseLook m_MouseLook;
         [SerializeField] private bool m_UseFovKick;
         [SerializeField] private FOVKick m_FovKick = new FOVKick();
         [SerializeField] private bool m_UseHeadBob;
@@ -52,36 +52,26 @@ namespace UnityStandardAssets.Characters.FirstPerson
         // Use this for initialization
         private void Start()
         {
-            // m_CharacterController = GetComponent<CharacterController>();
-            // m_Camera = Camera.main;
-            // m_OriginalCameraPosition = m_Camera.transform.localPosition;
-            // m_FovKick.Setup(m_Camera);
-            // m_HeadBob.Setup(m_Camera, m_StepInterval);
-            // m_StepCycle = 0f;
-            // m_NextStep = m_StepCycle/2f;
-            // m_Jumping = false;
-            // m_AudioSource = GetComponent<AudioSource>();
-			// m_MouseLook.Init(transform , m_Camera.transform);
+            m_CharacterController = GetComponent<CharacterController>();
+            m_Camera = Camera.main;
+            m_OriginalCameraPosition = m_Camera.transform.localPosition;
+            m_FovKick.Setup(m_Camera);
+            m_HeadBob.Setup(m_Camera, m_StepInterval);
+            m_StepCycle = 0f;
+            m_NextStep = m_StepCycle/2f;
+            m_Jumping = false;
+            m_AudioSource = GetComponent<AudioSource>();
+			m_MouseLook.Init(transform , m_Camera.transform);
         }
 
 
         // Update is called once per frame
         private void Update()
         {
-            // This is a hack because setting these in start messes up the initialization of player position.
-            if(m_CharacterController == null) {
-                Debug.Log("setting values not set in start");
-                m_CharacterController = GetComponent<CharacterController>();
-                m_Camera = Camera.main;
-                m_OriginalCameraPosition = m_Camera.transform.localPosition;
-                m_FovKick.Setup(m_Camera);
-                m_HeadBob.Setup(m_Camera, m_StepInterval);
-                m_StepCycle = 0f;
-                m_NextStep = m_StepCycle/2f;
-                m_Jumping = false;
-                m_AudioSource = GetComponent<AudioSource>();
-                m_MouseLook.Init(transform , m_Camera.transform);
-                return;
+            // Enter screenshot mode.
+            if(Input.GetKeyUp(KeyCode.F5)) {
+                if(paused) SetPaused(false);
+                else SetPaused(true);
             }
 
             if(!paused) {
@@ -116,11 +106,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void FixedUpdate()
         {
-            if(m_CharacterController == null) {
-                Debug.Log("player has not been placed for fixed update");
-                return;
-            }
-
             if(!paused) {
 
                 float speed;

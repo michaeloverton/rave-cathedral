@@ -25,40 +25,6 @@ public class SkipController : MonoBehaviour
     private float trackThreeMaxVolume;
     private float startTrackMaxVolume;
 
-/*
-    void Awake() {
-        int track;
-        if(!developmentMode) {
-            TrackSkipper skipper = GameObject.Find("TrackSkipper").GetComponent<TrackSkipper>();
-            track = skipper.GetTrackSkip();
-        } else {
-            track = developmentModeStartTrack;
-        }
-        
-        if(track == 1) {
-            // if(!developmentMode) Instantiate(player, trackOneStart.position, Quaternion.AngleAxis(90, Vector3.up));
-            player.transform.position = trackOneStart.position;
-            startTrack = trackOneMusic;
-            startTrackMaxVolume = trackOneMaxVolume;
-            
-            trackOneTitleTrigger.MakeFirstTrack();
-        } else if(track == 2) {
-            // if(!developmentMode) Instantiate(player, trackTwoStart.position, Quaternion.AngleAxis(90, Vector3.up));
-            player.transform.position = trackTwoStart.position;
-            startTrack = trackTwoMusic;
-            startTrackMaxVolume = trackTwoMaxVolume;
-            
-            trackTwoTitleTrigger.MakeFirstTrack();
-        } else {
-            if(!developmentMode) Instantiate(player, trackThreeStart.position, Quaternion.AngleAxis(90, Vector3.up));
-            startTrack = trackThreeMusic;
-            startTrackMaxVolume = trackThreeMaxVolume;
-            
-            trackThreeTitleTrigger.MakeFirstTrack();
-        }
-    }
-    */
-
     void Start()
     {
         // Remember the "max" volumes of each music when it's on.
@@ -71,33 +37,55 @@ public class SkipController : MonoBehaviour
         trackTwoMusic.volume = 0;
         trackThreeMusic.volume = 0;
 
-        int track;
+        // Track one is always the first track because of the removal of track skipping.
         if(!developmentMode) {
-            TrackSkipper skipper = GameObject.Find("TrackSkipper").GetComponent<TrackSkipper>();
-            track = skipper.GetTrackSkip();
-        } else {
-            track = developmentModeStartTrack;
-        }
-        
-        if(track == 1) {
-            player.transform.position = trackOneStart.position;
             startTrack = trackOneMusic;
             startTrackMaxVolume = trackOneMaxVolume;
-            
             trackOneTitleTrigger.MakeFirstTrack();
-        } else if(track == 2) {
-            player.transform.position = trackTwoStart.position;
-            startTrack = trackTwoMusic;
-            startTrackMaxVolume = trackTwoMaxVolume;
-            
-            trackTwoTitleTrigger.MakeFirstTrack();
         } else {
-            player.transform.position = trackThreeStart.position;
-            startTrack = trackThreeMusic;
-            startTrackMaxVolume = trackThreeMaxVolume;
-            
-            trackThreeTitleTrigger.MakeFirstTrack();
+            if(developmentModeStartTrack == 1) {
+                startTrack = trackOneMusic;
+                startTrackMaxVolume = trackOneMaxVolume;
+                trackOneTitleTrigger.MakeFirstTrack();
+            } else if(developmentModeStartTrack ==2) {
+                startTrack = trackTwoMusic;
+                startTrackMaxVolume = trackTwoMaxVolume;
+                trackTwoTitleTrigger.MakeFirstTrack();
+            } else {
+                startTrack = trackThreeMusic;
+                startTrackMaxVolume = trackThreeMaxVolume;
+                trackThreeTitleTrigger.MakeFirstTrack();
+            }
         }
+        
+
+        // int track;
+        // if(!developmentMode) {
+        //     TrackSkipper skipper = GameObject.Find("TrackSkipper").GetComponent<TrackSkipper>();
+        //     track = skipper.GetTrackSkip();
+        // } else {
+        //     track = developmentModeStartTrack;
+        // }
+        
+        // if(track == 1) {
+        //     player.transform.position = trackOneStart.position;
+        //     startTrack = trackOneMusic;
+        //     startTrackMaxVolume = trackOneMaxVolume;
+            
+        //     trackOneTitleTrigger.MakeFirstTrack();
+        // } else if(track == 2) {
+        //     player.transform.position = trackTwoStart.position;
+        //     startTrack = trackTwoMusic;
+        //     startTrackMaxVolume = trackTwoMaxVolume;
+            
+        //     trackTwoTitleTrigger.MakeFirstTrack();
+        // } else {
+        //     player.transform.position = trackThreeStart.position;
+        //     startTrack = trackThreeMusic;
+        //     startTrackMaxVolume = trackThreeMaxVolume;
+            
+        //     trackThreeTitleTrigger.MakeFirstTrack();
+        // }
     }
 
     void Update() {

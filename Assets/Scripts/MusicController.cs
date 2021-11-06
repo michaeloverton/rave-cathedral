@@ -34,6 +34,8 @@ public class MusicController : MonoBehaviour
     private float trackThreeStartVolume;
     private float trackThreeStartFilter;
     public AudioLowPassFilter trackThreeFilter;
+    
+    private bool canTransition = true;
 
     void Start() {
         trackOneStartVolume = skipController.TrackOneMaxVolume();
@@ -49,6 +51,11 @@ public class MusicController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // If we cannot transition, do nothing.
+        if(!canTransition) {
+            return;
+        }
+
         float playerYPos = player.transform.position.y;
         if(playerYPos > trackOneChangeStartY) {
             // If we're outside transition range, disable filter.
@@ -100,5 +107,9 @@ public class MusicController : MonoBehaviour
             );
             trackThree.volume = trackThreeStartVolume * fadePercent;
         }
+    }
+
+    public void CanTransition(bool can) {
+        canTransition = can;
     }
 }
